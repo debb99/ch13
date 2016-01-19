@@ -3,7 +3,7 @@ package com.debashish.reverse;
 import java.util.Random;
 import java.util.Scanner;
 
-public class ReverseTest {
+public class ReverseTest2 {
 	public static void main(String[] args) {
 		Scanner myScanner = new Scanner(System.in);
 		Random gen = new Random();
@@ -16,18 +16,18 @@ public class ReverseTest {
 			origArray[i] = gen.nextInt(89) + 10;
 		}
 		
-		int[] reverseArray = reverse(origArray);
-		
 		System.out.println("ORIGINAL ARRAY: ");
 		for(int k = 0; k < origArray.length; k++){
 			System.out.printf("\tarray[%d] = %d\n", k, origArray[k]);
 		}
 		
+		reverse(origArray);
+	
 		System.out.println();
 		
 		System.out.println("REVERSED ARRAY: ");
-		for(int j = 0; j < reverseArray.length; j++){
-			System.out.printf("\tarray[%d] = %d\n", j, reverseArray[j]);
+		for(int j = 0; j < origArray.length; j++){
+			System.out.printf("\tarray[%d] = %d\n", j, origArray[j]);
 		}
 	}
 
@@ -38,14 +38,16 @@ public class ReverseTest {
 	 *            an array of integer values
 	 * @return a copy of the array, with the elements reversed
 	 */
-	public static int[] reverse(int[] array) {
+	public static void reverse(int[] array) {
 		int len = array.length;
 		int[] newArray = new int[len];
 
 		for (int i = 0; i < len; i++)
 			newArray[len - i - 1] = array[i];
-
-		return newArray;
+		
+		for(int j = 0; j < len; j++){
+			array[j] = newArray[j];
+		}
 	}
 
 }
