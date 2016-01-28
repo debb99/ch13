@@ -1,6 +1,7 @@
 package com.debashish.scores;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class ScoreSet {
 	public ScoreSet() {
@@ -9,48 +10,41 @@ public class ScoreSet {
 
 	public void add(int score) {
 		scores.add(score);
-		if(scores.size() == 1){
-			lowIndex1 = scores.get(0);
-		} else if(scores.size() == 2){
-			lowIndex2 = scores.get(1);
-		} else {
-			for(int i = 0; i < scores.size(); i++){
-				int temp = scores.get(i);
-				if(lowIndex1 < temp && temp != lowIndex2){
-					lowIndex1 = temp;
-				}
-			}
-			
-			for(int j = 0; j < scores.size(); j++){
-				int temp = scores.get(j);
-				if(lowIndex2 < temp && temp != lowIndex1){
-					lowIndex2 = temp;
+		sort(scores);
+	}
+
+	public double averageWithoutLowest2() {
+		int i;
+		int sum = 0;
+		for(i = 0; i < scores.size() - 2; i++){
+			sum += scores.get(i + 2);
+		}
+		
+		
+		return sum / i;
+	}
+
+	public String twoLow() {
+		return String.format("%d %d", scores.get(0), scores.get(1));
+	}
+
+	public String toString() {
+		return scores.toString();
+
+		// return each element of the array list separated by spaces as a string
+	}
+
+	public void sort(ArrayList<Integer> array){
+		for (int j = 0; j <= array.size(); j++){
+			for (int i = 0; i < array.size() - 1; i++){
+				if (array.get(i) > array.get(i + 1)){
+					int temp = array.get(i);
+					array.set(i, array.get(i + 1));
+					array.set(i + 1, temp);
 				}
 			}
 		}
 	}
-
-	public double averageWithoutLowest2( )
-   {
-		
-   }
-
-	public String twoLow( )
-   {
-		return String.format("%d %d", lowIndex1, lowIndex2); // return a string consisting of the two lowest scores with a space between
-   }
-
-	public String toString( )
-   {
-		String result = "";
-		for(int i : scores){
-			result = Integer.toString(i) + "";
-		}
-		
-		return result;
-		
-		// return each element of the array list separated by spaces as a string
-   }
 
 	private ArrayList<Integer> scores;
 	int lowIndex1;
