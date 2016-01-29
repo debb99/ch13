@@ -24,8 +24,10 @@ public class TwoDimensionalArray {
 			System.out.println();
 		}
 
-		for (int n = 0; n < twoDim.length; n++) {
-			System.out.printf("The max for column %d is %d\n", n, getMaxColumn(twoDim));
+		System.out.println();
+
+		for (int n = 0; n < twoDim[0].length; n++) {
+			System.out.printf("The max for column %d is %d\n", n, getMaxColumn(n, twoDim));
 		}
 	}
 
@@ -39,11 +41,11 @@ public class TwoDimensionalArray {
 		return temp;
 	}
 
-	protected static int getMaxColumn(int[][] array) {
+	protected static int getMaxColumn(int row, int[][] array) {
 		int temp = 0;
-		for (int i[] : array) {
-			for (int j : i) {
-
+		for (int i = 0; i < array.length; i++) {
+			if (array[i][row] > temp) {
+				temp = array[i][row];
 			}
 		}
 		return temp;
