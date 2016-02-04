@@ -9,7 +9,6 @@ public class Cloud {
 		cloudFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		cloudFrame.setLocationRelativeTo(null);
 		cloudFrame.setVisible(true);
-
 	}
 
 }
