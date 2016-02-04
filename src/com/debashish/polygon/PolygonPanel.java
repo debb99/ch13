@@ -16,7 +16,10 @@ public class PolygonPanel extends JPanel{
 	}
 	
 	public void setPolygonData(int nSides, double sLength){
+		numSides = nSides;
+		sideLength = sLength;
 		
+		repaint();
 	}
 	
 	public void paintComponent(Graphics g){

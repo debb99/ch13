@@ -8,6 +8,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
@@ -34,14 +35,18 @@ public class PolygonFrame extends JFrame {
 		class DrawListener implements ActionListener {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				if(numSidesInput.getText() == null || sideLengthInput.getText() == null){
-					//JOptionPane.showMessage
+				try {
+					polyPanel.setPolygonData(Integer.parseInt(numSidesInput.getText()),
+							Double.parseDouble(sideLengthInput.getText()));
+				} catch (Exception ex) {
+					JOptionPane.showMessageDialog(polyPanel, "Please enter valid numbers.", "Invalid input",
+							JOptionPane.ERROR_MESSAGE);
 				}
-				
-				polyPanel.setPolygonData(Integer.parseInt(numSidesInput.getText()),
-						Double.parseDouble(sideLengthInput.getText()));
+
 			}
 		}
+
+		drawButton.addActionListener(new DrawListener());
 
 		controlPanel.add(numSides);
 		controlPanel.add(numSidesInput);
