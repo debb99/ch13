@@ -19,6 +19,8 @@ public class PolygonFrame extends JFrame {
 		polyPanel = new PolygonPanel();
 		add(polyPanel, BorderLayout.CENTER);
 		createControlPanel();
+		
+		pack();
 	}
 
 	public void createControlPanel() {

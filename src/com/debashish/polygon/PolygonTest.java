@@ -15,10 +15,8 @@ public class PolygonTest {
 			e.printStackTrace();
 		}
 		PolygonFrame myFrame = new PolygonFrame("Draw a Regular Polygon");
-		myFrame.setSize(new Dimension(600, 600));
-		myFrame.setLocationRelativeTo(null);
 		myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		//myFrame.pack();
+		myFrame.setLocationRelativeTo(null);
 		myFrame.setVisible(true);
 	}
 }
