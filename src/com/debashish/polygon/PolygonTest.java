@@ -1,5 +1,7 @@
 package com.debashish.polygon;
 
+import java.awt.Dimension;
+
 import javax.swing.JFrame;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
@@ -13,8 +15,10 @@ public class PolygonTest {
 			e.printStackTrace();
 		}
 		PolygonFrame myFrame = new PolygonFrame("Draw a Regular Polygon");
+		myFrame.setSize(new Dimension(600, 600));
 		myFrame.setLocationRelativeTo(null);
 		myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		//myFrame.pack();
 		myFrame.setVisible(true);
 	}
 }

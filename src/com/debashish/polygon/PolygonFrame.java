@@ -1,7 +1,6 @@
 package com.debashish.polygon;
 
 import java.awt.BorderLayout;
-import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -15,21 +14,19 @@ import javax.swing.JTextField;
 public class PolygonFrame extends JFrame {
 	public PolygonFrame(String title) {
 		super(title);
-		setSize(new Dimension(600, 600));
 		setLayout(new BorderLayout());
-
+		setResizable(false);
 		polyPanel = new PolygonPanel();
-		add(polyPanel);
-
+		add(polyPanel, BorderLayout.CENTER);
 		createControlPanel();
 	}
 
 	public void createControlPanel() {
 		JPanel controlPanel = new JPanel();
-		JLabel numSides = new JLabel("# Sides = ");
-		JLabel sideLength = new JLabel("Side Length");
-		JTextField numSidesInput = new JTextField(5);
-		JTextField sideLengthInput = new JTextField(5);
+		JLabel numSides = new JLabel("Number of Sides = ");
+		JLabel sideLength = new JLabel("Side Length = ");
+		JTextField numSidesInput = new JTextField(4);
+		JTextField sideLengthInput = new JTextField(4);
 		JButton drawButton = new JButton("Draw");
 
 		class DrawListener implements ActionListener {
@@ -42,7 +39,6 @@ public class PolygonFrame extends JFrame {
 					JOptionPane.showMessageDialog(polyPanel, "Please enter valid numbers.", "Invalid input",
 							JOptionPane.ERROR_MESSAGE);
 				}
-
 			}
 		}
 
