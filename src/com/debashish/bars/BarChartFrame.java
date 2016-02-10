@@ -10,8 +10,7 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
-
-import com.debashish.polygon.PolygonPanel;
+import javax.swing.border.EtchedBorder;
 
 public class BarChartFrame extends JFrame {
 	public BarChartFrame(String title){
@@ -55,7 +54,9 @@ public class BarChartFrame extends JFrame {
 		controlPanel.add(heightLabel);
 		controlPanel.add(inputField);
 		controlPanel.add(drawButton);
-
+		
+		controlPanel.setBorder(new EtchedBorder());
+		
 		add(controlPanel, BorderLayout.NORTH);
 	}
 	
