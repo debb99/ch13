@@ -11,6 +11,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EtchedBorder;
+import javax.swing.border.TitledBorder;
 
 public class BarChartFrame extends JFrame {
 	public BarChartFrame(String title){
@@ -41,9 +42,9 @@ public class BarChartFrame extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				try {
-					
+					barPanel.newBar(Double.parseDouble(inputField.getText()));
 				} catch (Exception ex) {
-					JOptionPane.showMessageDialog(barPanel, "Please enter a valid number.", "Invalid input",
+					JOptionPane.showMessageDialog(barPanel, "Please enter a valid number.", "Input Invalid",
 							JOptionPane.ERROR_MESSAGE);
 				}
 			}

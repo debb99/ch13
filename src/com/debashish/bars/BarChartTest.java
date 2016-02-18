@@ -15,7 +15,7 @@ public class BarChartTest {
 			e.printStackTrace();
 		}
 		
-		BarChartFrame myFrame = new BarChartFrame("Draw a Regular Polygon");
+		BarChartFrame myFrame = new BarChartFrame("Bar Chart");
 		myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		myFrame.setLocationRelativeTo(null);
 		myFrame.setVisible(true);
