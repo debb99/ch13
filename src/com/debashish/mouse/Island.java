@@ -95,7 +95,7 @@ public class Island {
 		int turn = moveAbout();
 		printIsland(Island);
 		
-		String indent = "\t\t\t\t";
+		String indent = "\t\t\t";
 		
 		if(finalStatus == Status.ESCAPED){
 			System.out.println(indent + "The mouse has escaped on turn " + turn);
