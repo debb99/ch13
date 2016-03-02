@@ -35,7 +35,12 @@ public class Island {
 	public void printIsland(int[][] arr) {
 		for (int i = 0; i < arr.length; i++) {
 			for (int j = 0; j < arr[i].length; j++) {
-				System.out.printf("%6d", arr[i][j]);
+				if (i == 0 || i == arr.length - 1 || j == 0 || j == arr[i].length - 1) {
+					System.out.printf("%6s", arr[i][j] == -1 ? "W" : "B");
+				} else {
+					System.out.printf("%6d", arr[i][j]);
+				}
+					
 			}
 			System.out.println();
 		}
