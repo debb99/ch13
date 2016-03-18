@@ -29,7 +29,8 @@ public class PokerFrame extends JFrame{
 			   int handNumber = 0;
 			   while(file.hasNextInt( ))
 			   {
-				   area.setText(area.getText() + "\n" + file.nextInt());
+				   Card temp = new Card(file.nextInt(), file.nextInt());
+				   area.append(temp.getCardID() + "\n");
 			   }
 			   file.close( );
 			}
